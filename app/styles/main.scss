@@ -22,6 +22,7 @@ body {
     font-size: 30px;
     font-weight: normal;
     height: 37px;
+    margin-left: 15px;
     margin-bottom: 30px;
     padding-bottom: 0px;
     padding-left: 0px;
@@ -40,7 +41,7 @@ body {
     font-weight: normal;
     height: 23px;
     margin-bottom: 20px;
-    margin-left: 0px;
+    margin-left: 3px;
     margin-right: 0px;
     margin-top: 0px;
     padding-bottom: 0px;
@@ -84,6 +85,53 @@ body {
     zoom: 1;
 }
 
+.search {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.contact {
+    -webkit-background-clip: border-box;
+    -webkit-background-origin: padding-box;
+    -webkit-background-size: auto;
+    -webkit-font-smoothing: antialiased;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgb(235, 235, 235);
+    background-image: none;
+    background-origin: padding-box;
+    background-size: auto;
+    border-bottom-color: rgb(210, 208, 208);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(210, 208, 208);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(210, 208, 208);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(210, 208, 208);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    cursor: pointer;
+    height: 120px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 5px;
+    padding-left: 16px;
+    padding-right: 5px;
+    padding-top: 5px;
+    zoom: 1;
+}
 .navlist {
     -webkit-font-smoothing: antialiased;
     display: block;
@@ -181,6 +229,66 @@ li.selected {
     }
 }
 
+.contactimg {
+    -webkit-background-clip: border-box;
+    -webkit-background-origin: padding-box;
+    -webkit-background-size: auto;
+    -webkit-font-smoothing: antialiased;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(https://www.touchnote.com/public/img/card/address/icon_no_image.png);
+    background-origin: padding-box;
+    background-size: auto;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: 'VAG Rounded Std Light';
+    height: 54px;
+    margin-bottom: 16px;
+    margin-left: 0px;
+    margin-right: 5px;
+    margin-top: 16px;
+    width: 54px;
+    zoom: 1;
+}
+
+.edit {
+    -webkit-background-clip: border-box;
+    -webkit-background-origin: padding-box;
+    -webkit-background-size: auto;
+    -webkit-font-smoothing: antialiased;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(https://www.touchnote.com/public/img/addressbook/index/icon_edit.png);
+    background-origin: padding-box;
+    background-size: auto;
+    color: rgb(98, 99, 102);
+    cursor: auto;
+    display: block;
+    float: left;
+    font-family: 'VAG Rounded Std Light';
+    height: 23px;
+    margin-bottom: 27px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 27px;
+    outline-color: rgb(98, 99, 102);
+    outline-style: none;
+    outline-width: 0px;
+    text-decoration: underline solid rgb(98, 99, 102);
+    text-indent: -9999px;
+    width: 45px;
+    zoom: 1;
+}
+
+.detail {
+    margin-top: 6px;
+    color: rgb(113, 114, 115);
+    line-height: 20px;
+    text-shadow: rgba(255, 255, 255, 0.298039) 0px 
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

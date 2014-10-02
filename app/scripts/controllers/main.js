@@ -2,14 +2,21 @@
 
 angular.module('contactsAppApp')
   .controller('MainCtrl', function($scope, $){
-    $scope.contacts = [];
-    $.map(localStorage, function(value){
-      if(typeof JSON.parse(value) === 'object'){
-        $scope.contacts.push(JSON.parse(value));
-      }
-    });
+
+    $scope.initContacts = function (){
+      $scope.contacts = [];
+      $.map(localStorage, function(value){
+        if(typeof JSON.parse(value) === 'object'){
+          $scope.contacts.push(JSON.parse(value));
+        }
+      });
+
+      $('.contact').click(function(){
+        console.log('click');
+      });
+    };
+
     $scope.newAddress = function(){
-      console.log($scope.firstName+' '+$scope.lastName);
       var name = $scope.firstName+' '+$scope.lastName;
       var o = {
         first:$scope.firstName,
@@ -21,9 +28,18 @@ angular.module('contactsAppApp')
         town: $scope.town,
         county: $scope.county
       };
-      
-
       localStorage.setItem(name, JSON.stringify(o));
-      console.log (JSON.parse(localStorage.getItem('Jessie Shi')));
+      $scope.contacts.push(o);
     };
+
+    $scope.selectContact = function() {
+      $scope.selectedContact = this.contact;
+      $scope.selected = true;
+    };
+
+    $scope.edit = function(){
+
+    };
+
+
   });
