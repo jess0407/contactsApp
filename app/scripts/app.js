@@ -5,7 +5,8 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'jQuery'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -17,3 +18,8 @@ angular
         redirectTo: '/'
       });
   });
+
+angular.module('jQuery', [])
+.factory('$', function() {
+  return window.$;
+});
