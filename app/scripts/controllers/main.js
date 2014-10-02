@@ -28,7 +28,7 @@ angular.module('contactsAppApp')
       $scope.contacts.push(o);
     };
 
-    $scope.selectContact = function() {
+    $scope.selectContact = function(id) {
       $scope.selectedContact = this.contact;
       $('#first').val($scope.selectedContact.first);
       $('#last').val($scope.selectedContact.last);
@@ -38,6 +38,13 @@ angular.module('contactsAppApp')
       $('#addressl2E').val($scope.selectedContact.addressl2);
       $('#townE').val($scope.selectedContact.town);
       $('#countyE').val($scope.selectedContact.county);
+      if(!$scope.contacts[id].selected){
+        $scope.contacts[id].selected = true;
+      } else {
+        $scope.contacts[id].selected = false;
+      }
+      console.log($scope.contacts[id].selected);
+
     };
 
     $scope.edit = function(){

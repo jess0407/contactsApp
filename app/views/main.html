@@ -19,7 +19,7 @@
   
   <div class="contacts col-xs-12">
     
-    <div ng-click="selectContact()" class="col-xs-6 contact" ng-repeat="contact in contacts | filter: searchText" ng-show="$odd">
+    <div ng-click="selectContact($index)" ng-class="{'highlight':contact.selected}" class="col-xs-6 contact" ng-repeat="contact in contacts | filter: searchText" ng-show="$odd">
       <span class="contactimg col-xs-4"></span>
       <div class="detail col-xs-5">
         <h5>{{contact.first +" "+contact.last}}</h5>
@@ -28,7 +28,7 @@
       <a  href="" class="edit col-xs-3" data-toggle="modal" data-target="#editModal" >Edit</a>
     </div>
 
-    <div ng-click="selectContact()" class="col-xs-6 contact" ng-repeat="contact in contacts  | filter: searchText" ng-show="$even">
+    <div ng-click="selectContact($index)" ng-class="{'highlight':contact.selected}" class="col-xs-6 contact" ng-repeat="contact in contacts  | filter: searchText" ng-show="$even">
       <span class="contactimg col-xs-4"></span>
       <div class="detail col-xs-5">
         <h5>{{contact.first +" "+contact.last}}</h5>
