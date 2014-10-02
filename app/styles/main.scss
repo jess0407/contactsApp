@@ -6,90 +6,183 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-/* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    background-color: rgb(220, 220, 220);
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
+.wrap {
+    margin-top: 60px;
+    margin-left: 60px;
 }
 
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
+.title {
+    -webkit-font-smoothing: antialiased;
+    color: rgb(0, 150, 218);
+    display: block;
+    font-size: 30px;
+    font-weight: normal;
+    height: 37px;
+    margin-bottom: 30px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-shadow: rgba(255, 255, 255, 0.298039) 1px 1px 1px;
+    width: 912px;
+    zoom: 1;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+.subtitle {
+    -webkit-font-smoothing: antialiased;
+    color: rgb(13, 167, 221);
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    height: 23px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-shadow: rgba(255, 255, 255, 0.298039) 0px 1px 0px;
+    width: 444px;
+    zoom: 1;
 }
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
+.btn-address span {
+    -webkit-background-clip: border-box;
+    -webkit-background-origin: padding-box;
+    -webkit-background-size: auto;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition-delay: 0s;
+    -webkit-transition-duration: 0.5s;
+    -webkit-transition-property: opacity;
+    -webkit-transition-timing-function: ease-out;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(https://www.touchnote.com/public/img/addressbook/btn_enter_new_address.png);
+    background-origin: padding-box;
+    background-position: 0px 0px;
+    background-size: auto;
+    bottom: 0px;
+    color: rgb(98, 99, 102);
+    cursor: pointer;
+    display: block;
+    font-family: 'VAG Rounded Std Light';
+    height: 69px;
+    left: 0px;
+    opacity: 1;
+    transition-delay: 0s;
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    transition-timing-function: ease-out;
+    width: 448px;
+    zoom: 1;
 }
 
-.container-narrow > hr {
-    margin: 30px 0;
+.navlist {
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    height: 28px;
+    list-style-type: disc;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    width: 444px;
+    zoom: 1;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
+.navlist li {
+    -webkit-background-clip: border-box;
+    -webkit-background-origin: padding-box;
+    -webkit-background-size: auto;
+    -webkit-font-smoothing: antialiased;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(https://www.touchnote.com/public/img/card/address/address_tab.png);
+    background-origin: padding-box;
+    background-size: auto;
+    color: rgb(0, 150, 218);
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 13px;
+    height: 28px;
+    line-height: 28px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+    text-shadow: rgba(170, 220, 243, 0.298039) 0px 1px 0px;
+    width: 34px;
+    zoom: 1;
+    a {
+        color: rgb(98, 99, 102);;
+    }
 }
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+li.selected {
+    -webkit-background-clip: border-box;
+    -webkit-background-origin: padding-box;
+    -webkit-background-size: auto;
+    -webkit-font-smoothing: antialiased;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(https://www.touchnote.com/public/img/card/address/address_tab.png);
+    background-origin: padding-box;
+    background-position: 0px -56px;
+    background-size: auto;
+    color: rgb(0, 150, 218);
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 13px;
+    height: 28px;
+    line-height: 28px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-align: center;
+    text-shadow: rgba(170, 220, 243, 0.298039) 0px 1px 0px;
+    width: 34px;
+    zoom: 1;
+
+    a {
+        color: rgb(255, 255, 255);
+    }
 }
 
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-}
-
-.marketing p + h4 {
-    margin-top: 28px;
-}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
-
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
+    
 }
