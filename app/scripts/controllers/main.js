@@ -10,10 +10,6 @@ angular.module('contactsAppApp')
           $scope.contacts.push(JSON.parse(value));
         }
       });
-
-      $('.contact').click(function(){
-        console.log('click');
-      });
     };
 
     $scope.newAddress = function(){
@@ -34,11 +30,35 @@ angular.module('contactsAppApp')
 
     $scope.selectContact = function() {
       $scope.selectedContact = this.contact;
-      $scope.selected = true;
+      $('#first').val($scope.selectedContact.first);
+      $('#last').val($scope.selectedContact.last);
+      $('#countryE').val($scope.selectedContact.country);
+      $('#postcodeE').val($scope.selectedContact.postcode);
+      $('#addressl1E').val($scope.selectedContact.addressl1);
+      $('#addressl2E').val($scope.selectedContact.addressl2);
+      $('#townE').val($scope.selectedContact.town);
+      $('#countyE').val($scope.selectedContact.county);
     };
 
     $scope.edit = function(){
 
+      var o = {
+        first:$('#first').val(),
+        last:  $('#last').val(),
+        country: $('#countryE').val(),
+        postcode:  $('#postcodeE').val(),
+        addressl1: $('#addressl1E').val(),
+        addressl2:$('#addressl2E').val(),
+        town: $('#townE').val(),
+        county:  $('#countyE').val()
+      };
+      var key = $('#first').val() + ' ' + $('#last').val();
+      console.log($scope.selectedContact);
+
+      console.log(localStorage[key]);
+      localStorage.setItem(key , JSON.stringify(o));
+      console.log(localStorage[key]);
+      $scope.initContacts();
     };
 
 
