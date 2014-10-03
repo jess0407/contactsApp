@@ -2,10 +2,32 @@
 
 angular.module('contactsAppApp')
   .controller('MainCtrl', function($scope, $){
+    $scope.contacts = [];
+
+    var pluck = function(letters){
+      var a = letters.charCodeAt(0);
+      var b = letters.charCodeAt(1);
+
+      while($scope.contacts.length>0){
+        $scope.contacts.pop();
+      }
+
+      return $.map(localStorage, function(obj){
+        if(typeof JSON.parse(obj) === 'object'){
+          var first, last;
+          first = JSON.parse(obj).first[0].toUpperCase().charCodeAt(0);
+          last = JSON.parse(obj).last[0].toUpperCase().charCodeAt(0);
+
+          if( (first>=a && first <=b) || (last>=a && last<=b)){
+            $scope.contacts.push(JSON.parse(obj));
+            return obj;
+          }
+        }
+      });
+    };
 
     $scope.keygen = function(){
       var num = Math.random();
-      console.log(num);
       return Math.floor(num*100000000);
     };
 
@@ -33,7 +55,6 @@ angular.module('contactsAppApp')
       };
       localStorage.setItem(key, JSON.stringify(o));
       $scope.contacts.push(o);
-      console.log('key is  '+key);
     };
 
     $scope.selectContact = function(id) {
@@ -70,5 +91,31 @@ angular.module('contactsAppApp')
       $scope.initContacts();
     };
 
+    $scope.filter = function(letters){
+      $('ul.navlist li').removeClass('selected');
+
+      switch(letters){
+        case 'AE':
+          console.log('AE');
+          $('#ae').addClass('selected');
+          pluck('AE');
+          break;
+        case 'FK':
+          console.log('FK');
+          break;
+        case 'LP':
+          console.log('LP');
+          break;
+        case 'QV':
+          console.log('QV');
+          break;
+        case 'WZ':
+          console.log('WZ');
+          break;
+        case 'ALL':
+          console.log('ALL');
+          break;
+      }
+    };
 
   });

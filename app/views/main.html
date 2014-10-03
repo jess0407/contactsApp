@@ -1,25 +1,25 @@
+{{contacts}}
 <div class="wrap" ng-init=initContacts()>
   <h1 class="title col-xs-12">Decide who to send your card to</h1>
   <div class="contactlist col-xs-12">
     <h3 class="subtitle col-xs-12">Select who to send your card to</h3>
     <a href="#" class="btn-address col-xs-12" data-toggle="modal" data-target="#formModal" ><span></span></a>
-    <div class="search form-group col-xs-6" >
+    <!--<div class="search form-group col-xs-6" >
       <input ng-model="searchText" type="text" class="form-control" placeholder = "search your contacts">
-    </div>
-    
-    <ul class="navlist">
-      <li class="selected"><a href="#">All</a></li>
-      <li><a href="#">A-E</a></li>
-      <li><a href="#">F-K</a></li>
-      <li><a href="#">L-P</a></li>
-      <li><a href="#">Q-V</a></li>
-      <li><a href="#">W-Z</a></li>
+    </div>-->
+    <ul class="navlist col-xs-12">
+      <li ng-click="filter('ALL')" class="selected" id="all"><a href="#">All</a></li>
+      <li id="ae"><a ng-click="filter('AE')" href="#" >A-E</a></li>
+      <li id="fk"><a ng-click="filter('FK')" href="#" >F-K</a></li>
+      <li id="lp"><a ng-click="filter('LP')" href="#" >L-P</a></li>
+      <li id="qv"><a ng-click="filter('QV')" href="#" >Q-V</a></li>
+      <li id="wz"><a ng-click="filter('WZ')" href="#" >W-Z</a></li>
     </ul>
   </div>
   
   <div class="contacts col-xs-12">
     
-    <div ng-click="selectContact($index)" ng-class="{'highlight':contact.selected}" class="col-xs-6 contact" ng-repeat="contact in contacts | filter: searchText" ng-show="$odd">
+    <div ng-click="selectContact($index)" ng-class="{'highlight':contact.selected}" class="col-xs-6 contact" ng-repeat="contact in contacts" ng-show="$odd">
       <span class="contactimg col-xs-4"></span>
       <div class="detail col-xs-5">
         <h5>{{contact.first +" "+contact.last}}</h5>
@@ -28,7 +28,7 @@
       <a  href="" class="edit col-xs-3" data-toggle="modal" data-target="#editModal" >Edit</a>
     </div>
 
-    <div ng-click="selectContact($index)" ng-class="{'highlight':contact.selected}" class="col-xs-6 contact" ng-repeat="contact in contacts  | filter: searchText" ng-show="$even">
+    <div ng-click="selectContact($index)" ng-class="{'highlight':contact.selected}" class="col-xs-6 contact" ng-repeat="contact in contacts"  ng-show="$even">
       <span class="contactimg col-xs-4"></span>
       <div class="detail col-xs-5">
         <h5>{{contact.first +" "+contact.last}}</h5>

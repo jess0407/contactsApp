@@ -6,7 +6,8 @@ angular
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'jQuery'
+    'jQuery',
+    'underscore'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -22,4 +23,9 @@ angular
 angular.module('jQuery', [])
 .factory('$', function() {
   return window.$;
+});
+
+angular.module('underscore', [])
+.factory('_', function() {
+  return window._;
 });
