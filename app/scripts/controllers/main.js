@@ -3,6 +3,12 @@
 angular.module('contactsAppApp')
   .controller('MainCtrl', function($scope, $){
 
+    $scope.keygen = function(){
+      var num = Math.random();
+      console.log(num);
+      return Math.floor(num*100000000);
+    };
+
     $scope.initContacts = function (){
       $scope.contacts = [];
       $.map(localStorage, function(value){
@@ -13,7 +19,7 @@ angular.module('contactsAppApp')
     };
 
     $scope.newAddress = function(){
-      var name = $scope.firstName+' '+$scope.lastName;
+      var key =  $scope.keygen();
       var o = {
         first:$scope.firstName,
         last: $scope.lastName,
@@ -22,10 +28,12 @@ angular.module('contactsAppApp')
         addressl1: $scope.addressl1,
         addressl2:$scope.addressl2 ,
         town: $scope.town,
-        county: $scope.county
+        county: $scope.county,
+        oid: key
       };
-      localStorage.setItem(name, JSON.stringify(o));
+      localStorage.setItem(key, JSON.stringify(o));
       $scope.contacts.push(o);
+      console.log('key is  '+key);
     };
 
     $scope.selectContact = function(id) {
@@ -43,12 +51,10 @@ angular.module('contactsAppApp')
       } else {
         $scope.contacts[id].selected = false;
       }
-      console.log($scope.contacts[id].selected);
-
     };
 
     $scope.edit = function(){
-
+      var key = $scope.selectedContact.oid;
       var o = {
         first:$('#first').val(),
         last:  $('#last').val(),
@@ -57,14 +63,10 @@ angular.module('contactsAppApp')
         addressl1: $('#addressl1E').val(),
         addressl2:$('#addressl2E').val(),
         town: $('#townE').val(),
-        county:  $('#countyE').val()
+        county:  $('#countyE').val(),
+        oid: key
       };
-      var key = $('#first').val() + ' ' + $('#last').val();
-      console.log($scope.selectedContact);
-
-      console.log(localStorage[key]);
       localStorage.setItem(key , JSON.stringify(o));
-      console.log(localStorage[key]);
       $scope.initContacts();
     };
 
