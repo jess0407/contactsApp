@@ -1,29 +1,10 @@
 'use strict';
 
 angular.module('contactsAppApp')
-  .controller('MainCtrl', function($scope, $){
-    $scope.contacts = [];
-
-    var pluck = function(letters){
-      var a = letters.charCodeAt(0);
-      var b = letters.charCodeAt(1);
-
-      while($scope.contacts.length>0){
-        $scope.contacts.pop();
-      }
-
-      return $.map(localStorage, function(obj){
-        if(typeof JSON.parse(obj) === 'object'){
-          var first, last;
-          first = JSON.parse(obj).first[0].toUpperCase().charCodeAt(0);
-          last = JSON.parse(obj).last[0].toUpperCase().charCodeAt(0);
-
-          if( (first>=a && first <=b) || (last>=a && last<=b)){
-            $scope.contacts.push(JSON.parse(obj));
-            return obj;
-          }
-        }
-      });
+  .controller('MainCtrl', function($scope, $, contactsService){
+    $scope.initContacts = function(){
+       $scope.contacts = contactsService.contacts;
+       $scope.letters =contactsService.letters;
     };
 
     $scope.keygen = function(){
@@ -31,14 +12,6 @@ angular.module('contactsAppApp')
       return Math.floor(num*100000000);
     };
 
-    $scope.initContacts = function (){
-      $scope.contacts = [];
-      $.map(localStorage, function(value){
-        if(typeof JSON.parse(value) === 'object'){
-          $scope.contacts.push(JSON.parse(value));
-        }
-      });
-    };
 
     $scope.newAddress = function(){
       var key =  $scope.keygen();
@@ -88,34 +61,13 @@ angular.module('contactsAppApp')
         oid: key
       };
       localStorage.setItem(key , JSON.stringify(o));
-      $scope.initContacts();
+      $scope.contacts = contactsService.getContacts();
     };
 
     $scope.filter = function(letters){
-      $('ul.navlist li').removeClass('selected');
-
-      switch(letters){
-        case 'AE':
-          console.log('AE');
-          $('#ae').addClass('selected');
-          pluck('AE');
-          break;
-        case 'FK':
-          console.log('FK');
-          break;
-        case 'LP':
-          console.log('LP');
-          break;
-        case 'QV':
-          console.log('QV');
-          break;
-        case 'WZ':
-          console.log('WZ');
-          break;
-        case 'ALL':
-          console.log('ALL');
-          break;
-      }
+      contactsService.getContactsByLetters(letters);
+      $scope.contacts = contactsService.contacts;
     };
+
 
   });
