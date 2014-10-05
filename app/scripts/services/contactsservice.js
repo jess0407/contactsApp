@@ -24,6 +24,10 @@ angular.module('contactsAppApp')
       this.contacts = getContacts();
       this.letters = 'AZ';
 
+      this.refresh = function(){
+        this.contacts = getContacts();
+      };
+
       this.getContactsByLetters = function (letters) {
         this.letters = letters;
         this.contacts = getContacts();

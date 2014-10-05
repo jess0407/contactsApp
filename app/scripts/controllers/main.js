@@ -61,7 +61,8 @@ angular.module('contactsAppApp')
         oid: key
       };
       localStorage.setItem(key , JSON.stringify(o));
-      $scope.contacts = contactsService.getContacts();
+      contactsService.refresh();
+      $scope.contacts = contactsService.contacts;
     };
 
     $scope.filter = function(letters){
