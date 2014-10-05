@@ -26,12 +26,13 @@ angular.module('contactsAppApp')
 
       this.getContactsByLetters = function (letters) {
         this.letters = letters;
+        this.contacts = getContacts();
         var a = letters.charCodeAt(0);
         var b = letters.charCodeAt(1);
         var arr = localStorage;
-        var filtered =  $.map(arr, function(obj){
+        var filtered =  $.map(this.contacts, function(obj){
             var first, last, o;
-            o = JSON.parse(obj);
+            o = obj;
             first = o.first[0].toUpperCase().charCodeAt(0);
             last = o.last[0].toUpperCase().charCodeAt(0);
 
