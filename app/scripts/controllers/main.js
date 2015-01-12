@@ -65,10 +65,13 @@ angular.module('contactsAppApp')
       $scope.contacts = contactsService.contacts;
     };
 
-    $scope.filter = function(letters){
+   /*  for letter filterling
+   $scope.filter = function(letters){
       contactsService.getContactsByLetters(letters);
       $scope.contacts = contactsService.contacts;
     };
+
+    */
 
 
   });

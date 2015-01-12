@@ -7,7 +7,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 // endbower
 
 body {
-    background-color: rgb(220, 220, 220);
+    background-color: white;
 }
 
 .wrap {
@@ -53,50 +53,32 @@ body {
     zoom: 1;
 }
 
-.btn-address span {
-    -webkit-background-clip: border-box;
-    -webkit-background-origin: padding-box;
-    -webkit-background-size: auto;
-    -webkit-font-smoothing: antialiased;
-    -webkit-transition-delay: 0s;
-    -webkit-transition-duration: 0.5s;
-    -webkit-transition-property: opacity;
-    -webkit-transition-timing-function: ease-out;
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url(https://www.touchnote.com/public/img/addressbook/btn_enter_new_address.png);
-    background-origin: padding-box;
-    background-position: 0px 0px;
-    background-size: auto;
+.btn-address{
     margin-bottom: 30px;
-    color: rgb(98, 99, 102);
+    color: white;
+    background-color: orange;
     cursor: pointer;
     display: block;
-    font-family: 'VAG Rounded Std Light';
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 2em;
     height: 69px;
-    margin-left: -15px;
+    padding-left: 35px;
+    padding-top: 15px;
     opacity: 1;
-    transition-delay: 0s;
-    transition-duration: 0.5s;
-    transition-property: opacity;
-    transition-timing-function: ease-out;
-    width: 448px;
-    zoom: 1;
+    width: 350px;
+    border-radius: 10px;
+    &:hover {
+        text-decoration: none;
+        color:rgb(210, 208, 208);
+        background-color: darken(orange, 10%);
+    }
 }
 
-.search {
-    margin-top: 30px;
-    margin-bottom: 20px;
+.contacts {
+    margin-top: 35px;
 }
 
 .contact {
-    -webkit-background-clip: border-box;
-    -webkit-background-origin: padding-box;
-    -webkit-background-size: auto;
-    -webkit-font-smoothing: antialiased;
-    background-attachment: scroll;
-    background-clip: border-box;
     background-color: rgb(235, 235, 235);
     background-image: none;
     background-origin: padding-box;
